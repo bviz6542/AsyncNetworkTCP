@@ -9,21 +9,42 @@
 /* Begin PBXBuildFile section */
 		4329C3112B8F84C300662C81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3102B8F84C300662C81 /* AppDelegate.swift */; };
 		4329C3132B8F84C300662C81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3122B8F84C300662C81 /* SceneDelegate.swift */; };
-		4329C3152B8F84C300662C81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3142B8F84C300662C81 /* ViewController.swift */; };
-		4329C3182B8F84C300662C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4329C3162B8F84C300662C81 /* Main.storyboard */; };
 		4329C31A2B8F84C400662C81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4329C3192B8F84C400662C81 /* Assets.xcassets */; };
 		4329C31D2B8F84C400662C81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4329C31B2B8F84C400662C81 /* LaunchScreen.storyboard */; };
+		4329C3252B8F85E100662C81 /* TCPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3242B8F85E100662C81 /* TCPHandler.swift */; };
+		4329C3282B8F860F00662C81 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 4329C3272B8F860F00662C81 /* XMLCoder */; };
+		4329C32B2B8F86A400662C81 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C32A2B8F86A400662C81 /* MainViewController.swift */; };
+		4329C32D2B8F872100662C81 /* TCPSocketAddressHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C32C2B8F872100662C81 /* TCPSocketAddressHolder.swift */; };
+		4329C32F2B8F875200662C81 /* TCPCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C32E2B8F875200662C81 /* TCPCommand.swift */; };
+		4329C3312B8F876600662C81 /* TCPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3302B8F876600662C81 /* TCPError.swift */; };
+		4329C3332B8F878100662C81 /* TCPSocketAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3322B8F878100662C81 /* TCPSocketAddress.swift */; };
+		4329C3362B8F87AF00662C81 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3352B8F87AF00662C81 /* RequestModel.swift */; };
+		4329C3382B8F87C600662C81 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3372B8F87C600662C81 /* ResponseModel.swift */; };
+		4329C33A2B8F87DE00662C81 /* EmptyOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3392B8F87DE00662C81 /* EmptyOutput.swift */; };
+		4329C33C2B8F87F300662C81 /* EmptyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C33B2B8F87F300662C81 /* EmptyInput.swift */; };
+		4329C33F2B8F88B800662C81 /* ResultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C33E2B8F88B800662C81 /* ResultExtensions.swift */; };
+		4329C3412B8F8C3800662C81 /* UserInfoInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329C3402B8F8C3800662C81 /* UserInfoInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4329C30D2B8F84C300662C81 /* AsyncNetworkTCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncNetworkTCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4329C3102B8F84C300662C81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4329C3122B8F84C300662C81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4329C3142B8F84C300662C81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4329C3172B8F84C300662C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4329C3192B8F84C400662C81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4329C31C2B8F84C400662C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4329C31E2B8F84C400662C81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4329C3242B8F85E100662C81 /* TCPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPHandler.swift; sourceTree = "<group>"; };
+		4329C32A2B8F86A400662C81 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4329C32C2B8F872100662C81 /* TCPSocketAddressHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPSocketAddressHolder.swift; sourceTree = "<group>"; };
+		4329C32E2B8F875200662C81 /* TCPCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPCommand.swift; sourceTree = "<group>"; };
+		4329C3302B8F876600662C81 /* TCPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPError.swift; sourceTree = "<group>"; };
+		4329C3322B8F878100662C81 /* TCPSocketAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPSocketAddress.swift; sourceTree = "<group>"; };
+		4329C3352B8F87AF00662C81 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		4329C3372B8F87C600662C81 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		4329C3392B8F87DE00662C81 /* EmptyOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyOutput.swift; sourceTree = "<group>"; };
+		4329C33B2B8F87F300662C81 /* EmptyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyInput.swift; sourceTree = "<group>"; };
+		4329C33E2B8F88B800662C81 /* ResultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExtensions.swift; sourceTree = "<group>"; };
+		4329C3402B8F8C3800662C81 /* UserInfoInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4329C3282B8F860F00662C81 /* XMLCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +78,65 @@
 		4329C30F2B8F84C300662C81 /* AsyncNetworkTCP */ = {
 			isa = PBXGroup;
 			children = (
-				4329C3102B8F84C300662C81 /* AppDelegate.swift */,
-				4329C3122B8F84C300662C81 /* SceneDelegate.swift */,
-				4329C3142B8F84C300662C81 /* ViewController.swift */,
-				4329C3162B8F84C300662C81 /* Main.storyboard */,
-				4329C3192B8F84C400662C81 /* Assets.xcassets */,
-				4329C31B2B8F84C400662C81 /* LaunchScreen.storyboard */,
 				4329C31E2B8F84C400662C81 /* Info.plist */,
+				4329C3292B8F862E00662C81 /* Core */,
+				4329C32A2B8F86A400662C81 /* MainViewController.swift */,
+				4329C3242B8F85E100662C81 /* TCPHandler.swift */,
+				4329C32C2B8F872100662C81 /* TCPSocketAddressHolder.swift */,
+				4329C32E2B8F875200662C81 /* TCPCommand.swift */,
+				4329C3302B8F876600662C81 /* TCPError.swift */,
+				4329C3322B8F878100662C81 /* TCPSocketAddress.swift */,
+				4329C33D2B8F889D00662C81 /* Extensions */,
+				4329C3342B8F879600662C81 /* Models */,
 			);
 			path = AsyncNetworkTCP;
+			sourceTree = "<group>";
+		};
+		4329C3292B8F862E00662C81 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4329C3102B8F84C300662C81 /* AppDelegate.swift */,
+				4329C3122B8F84C300662C81 /* SceneDelegate.swift */,
+				4329C3192B8F84C400662C81 /* Assets.xcassets */,
+				4329C31B2B8F84C400662C81 /* LaunchScreen.storyboard */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4329C3342B8F879600662C81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4329C3422B8F8C4000662C81 /* Request */,
+				4329C3432B8F8C4700662C81 /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4329C33D2B8F889D00662C81 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4329C33E2B8F88B800662C81 /* ResultExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4329C3422B8F8C4000662C81 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				4329C3352B8F87AF00662C81 /* RequestModel.swift */,
+				4329C3402B8F8C3800662C81 /* UserInfoInput.swift */,
+				4329C33B2B8F87F300662C81 /* EmptyInput.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		4329C3432B8F8C4700662C81 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				4329C3372B8F87C600662C81 /* ResponseModel.swift */,
+				4329C3392B8F87DE00662C81 /* EmptyOutput.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +155,9 @@
 			dependencies = (
 			);
 			name = AsyncNetworkTCP;
+			packageProductDependencies = (
+				4329C3272B8F860F00662C81 /* XMLCoder */,
+			);
 			productName = AsyncNetworkTCP;
 			productReference = 4329C30D2B8F84C300662C81 /* AsyncNetworkTCP.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +186,9 @@
 				Base,
 			);
 			mainGroup = 4329C3042B8F84C300662C81;
+			packageReferences = (
+				4329C3262B8F860F00662C81 /* XCRemoteSwiftPackageReference "XMLCoder" */,
+			);
 			productRefGroup = 4329C30E2B8F84C300662C81 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +205,6 @@
 			files = (
 				4329C31D2B8F84C400662C81 /* LaunchScreen.storyboard in Resources */,
 				4329C31A2B8F84C400662C81 /* Assets.xcassets in Resources */,
-				4329C3182B8F84C300662C81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +215,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4329C3152B8F84C300662C81 /* ViewController.swift in Sources */,
+				4329C3252B8F85E100662C81 /* TCPHandler.swift in Sources */,
+				4329C32F2B8F875200662C81 /* TCPCommand.swift in Sources */,
+				4329C33A2B8F87DE00662C81 /* EmptyOutput.swift in Sources */,
+				4329C3312B8F876600662C81 /* TCPError.swift in Sources */,
 				4329C3112B8F84C300662C81 /* AppDelegate.swift in Sources */,
 				4329C3132B8F84C300662C81 /* SceneDelegate.swift in Sources */,
+				4329C33C2B8F87F300662C81 /* EmptyInput.swift in Sources */,
+				4329C3412B8F8C3800662C81 /* UserInfoInput.swift in Sources */,
+				4329C3362B8F87AF00662C81 /* RequestModel.swift in Sources */,
+				4329C32D2B8F872100662C81 /* TCPSocketAddressHolder.swift in Sources */,
+				4329C32B2B8F86A400662C81 /* MainViewController.swift in Sources */,
+				4329C33F2B8F88B800662C81 /* ResultExtensions.swift in Sources */,
+				4329C3382B8F87C600662C81 /* ResponseModel.swift in Sources */,
+				4329C3332B8F878100662C81 /* TCPSocketAddress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4329C3162B8F84C300662C81 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4329C3172B8F84C300662C81 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4329C31B2B8F84C400662C81 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +377,6 @@
 				INFOPLIST_FILE = AsyncNetworkTCP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +404,6 @@
 				INFOPLIST_FILE = AsyncNetworkTCP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4329C3262B8F860F00662C81 /* XCRemoteSwiftPackageReference "XMLCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CoreOffice/XMLCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.17.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4329C3272B8F860F00662C81 /* XMLCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4329C3262B8F860F00662C81 /* XCRemoteSwiftPackageReference "XMLCoder" */;
+			productName = XMLCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4329C3052B8F84C300662C81 /* Project object */;
 }
