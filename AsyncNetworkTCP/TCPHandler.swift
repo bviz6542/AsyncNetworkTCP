@@ -5,7 +5,6 @@
 //  Created by 정준우 on 2/29/24.
 //
 
-import Foundation
 import Network
 import XMLCoder
 
@@ -16,11 +15,12 @@ final class TCPHandler {
         inputParameter: InputType?,
         inputData: InputType.Type,
         outputData: OutputType.Type
-    ) async -> Result<OutputType, Error> {
+    ) async -> Swift.Result<OutputType, Error> {
         
         var connection: NWConnection?
         do {
-            connection = makeConnection(using: kindsOfSocket)
+            let addressInfo = try resolveAddress(using: kindsOfSocket)
+            connection = makeConnection(using: addressInfo)
             guard let connection = connection else { throw TCPError.connectionError }
             connection.start(queue: .global())
             try await checkConnectionState(using: connection)
@@ -36,14 +36,38 @@ final class TCPHandler {
         }
     }
     
-    private func makeConnection(using kindsOfSocket: TCPSocketAddress) -> NWConnection? {
+    private func resolveAddress(using kindsOfSocket: TCPSocketAddress) throws -> (host: NWEndpoint.Host, port: NWEndpoint.Port) {
         let (ip, port) = kindsOfSocket.socketAddress
-        let host = NWEndpoint.Host(ip)
-        guard let port = NWEndpoint.Port(rawValue: UInt16(port)) else { return nil }
+        guard let convertedPort = NWEndpoint.Port(rawValue: UInt16(port)) else { throw TCPError.connectionError }
+        
+        var hints = addrinfo()
+        hints.ai_family = AF_UNSPEC
+        hints.ai_socktype = SOCK_STREAM
+        
+        var res: UnsafeMutablePointer<addrinfo>?
+        let serverPort = String(port)
+        
+        let result = getaddrinfo(ip, serverPort, &hints, &res)
+        guard result == 0, let resList = res else { throw TCPError.addressResolveError }
+        
+        defer { freeaddrinfo(resList) }
+        
+        for addr in sequence(first: resList, next: { $0.pointee.ai_next }) {
+            var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+            if getnameinfo(addr.pointee.ai_addr, socklen_t(addr.pointee.ai_addrlen), &hostname, socklen_t(hostname.count), nil, 0, NI_NUMERICHOST) == 0 {
+                let convertedHost = NWEndpoint.Host(String(cString: hostname))
+                return (host: convertedHost, port: convertedPort)
+            }
+        }
+        
+        throw TCPError.addressResolveError
+    }
+    
+    private func makeConnection(using addressInfo: (host: NWEndpoint.Host, port: NWEndpoint.Port)) -> NWConnection {
         let options = NWProtocolTCP.Options()
         options.connectionTimeout = 3
         let parameters = NWParameters(tls: nil, tcp: options)
-        return NWConnection(host: host, port: port, using: parameters)
+        return NWConnection(host: addressInfo.host, port: addressInfo.port, using: parameters)
     }
     
     private func checkConnectionState(using connection: NWConnection) async throws {
@@ -85,7 +109,7 @@ final class TCPHandler {
             connection.send(content: requestData, completion: completion)
         }
     }
-    
+
     
     private func receiveMessage(using connection: NWConnection) async throws -> Data {
         return try await withCheckedThrowingContinuation { continuation in
@@ -100,21 +124,23 @@ final class TCPHandler {
         guard let responseModel = try? XMLDecoder().decode(ResponseModel<OutputType>.self, from: data) else {
             throw TCPError.responseXMLParseError
         }
-        
-        guard responseModel.result == "OK" else {
+
+        guard responseModel.result == TCP_SUCCESS else {
             guard let errorContents = responseModel.errorContents else { throw TCPError.responseUnexpectedFormatError }
             switch errorContents {
-            case "PARSE_FAILED":
+            case TCP_ERROR_XML_PARSE_ERROR:
                 throw TCPError.responseXMLParseError
-            case "BAD_CLIENT_ID":
-                throw TCPError.responseBadClientIDError
-            case "BAD_COMMAND":
-                throw TCPError.responseBadCommandError
+            case TCP_ERROR_BAD_ORG_ID:
+                throw TCPError.responseBadOrgIDError
+            case TCP_ERROR_BAD_AUTH_CODE:
+                throw TCPError.responseBadAuthCodeError
+            case TCP_ERROR_BAD_EXEC_COMMAND:
+                throw TCPError.responseBadExecCommandError
             default:
                 throw TCPError.responseCommandSpecificCustomError(errorContents)
             }
         }
-        
+
         if let outputData = responseModel.outputData {
             return outputData
         } else if let emptyOutput = EmptyOutput() as? OutputType {
